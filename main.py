@@ -16,7 +16,6 @@ with open("config.json", "r") as file:
 bot.token = bot.config["required"]["TOKEN"]
 bot.endpoint = bot.config["required"]["ENDPOINT"].split("/api")[0]
 bot.channels = [int(x) for x in bot.config["required"]["CHANNELS"].split(",")]
-bot.mention = bot.config["extras"]["MENTION"].lower()
 
 
 # Load cogs
