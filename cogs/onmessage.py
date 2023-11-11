@@ -16,7 +16,11 @@ class ListenerCog(commands.Cog, name="listener"):
         ]:
             return
 
-        print(message.content)
+        response = await self.bot.get_cog("generate_text").respond(message)
+        if response != "" or response is not None:
+            await message.channel.send(response)
+        else:
+            print("ERROR: response is empty")
 
 
 async def setup(bot):

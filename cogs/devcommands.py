@@ -14,7 +14,7 @@ class DevCommands(commands.Cog, name="dev_commands"):
     @commands.Cog.listener()
     async def on_ready(self):
         await self.bot.tree.sync()
-        print("Dev Commands cog synced.")
+        print(f"Dev Commands cog synced for {self.bot.name}")
 
     @app_commands.command(name="reload", description="reload cog")
     async def reload(self, interaction: discord.Interaction, cog: str):

@@ -14,11 +14,12 @@ with open("config.json", "r") as file:
 
 
 bot.token = bot.config["required"]["TOKEN"]
-bot.endpoint = bot.config["required"]["ENDPOINT"].split("/api")[0]
+bot.endpoint = bot.config["required"]["ENDPOINT"]
 bot.channels = [int(x) for x in bot.config["required"]["CHANNELS"].split(",")]
-
-
+bot.lines_to_keep = bot.config["required"]["LINES_TO_KEEP"]
 # Load cogs
+
+
 async def load_cogs() -> None:
     for file in os.listdir(f"{os.path.realpath(os.path.dirname(__file__))}/cogs"):
         if file.endswith(".py"):

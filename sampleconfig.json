@@ -1,0 +1,22 @@
+{
+  "required": {
+    "TOKEN": "MTEz[REDACTED]gqdtuSeJv6c",
+    "ENDPOINT": "http://127.0.0.1:5000/api/v1/generate",
+    "CHANNELS": "",
+    "LINES_TO_KEEP": 10
+  },
+  "extras": {
+    "PARAMS": {
+      "preset": "Midnight Enigma",
+      "max_length": 100,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "repetition_penalty": 1.0,
+      "num_return_sequences": 1,
+      "do_sample": true,
+      "length_penalty": 1.0,
+      "num_beams": 1,
+      "stopping_strings": []
+  }
+}
+}
