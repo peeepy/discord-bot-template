@@ -3,6 +3,7 @@ from discord.ext.commands import Bot
 import os
 import asyncio
 import json
+from helpers.chatbot import Chatbot
 
 # Initialize bot
 intents = discord.Intents.all()
@@ -15,8 +16,14 @@ with open("config.json", "r") as file:
 
 bot.token = bot.config["required"]["TOKEN"]
 bot.endpoint = bot.config["required"]["ENDPOINT"]
-bot.channels = [int(x) for x in bot.config["required"]["CHANNELS"].split(",")]
+bot.channels = [int(x) for x in bot.config["required"]["CHANNELS"]]
 bot.lines_to_keep = bot.config["required"]["LINES_TO_KEEP"]
+bot.channel_names = [bot.get_channel(str(i))
+                     for i in bot.channels if i is not None]
+
+# Initialize chatbot
+bot.character = Chatbot("Beep.json", bot, ["\n\n", "<|im_end|>"])
+
 # Load cogs
 
 
